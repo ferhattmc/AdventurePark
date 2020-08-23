@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ParkursAPIModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="FIRM">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FIRM_NAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="ADRESS" Type="nvarchar" MaxLength="50" />
+          <Property Name="IS_DELETED" Type="bit" />
+        </EntityType>
+        <EntityType Name="KURS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KUR" Type="nvarchar" MaxLength="50" />
+          <Property Name="CODE" Type="nvarchar" MaxLength="50" />
+          <Property Name="IS_DELETED" Type="bit" />
+          <Property Name="TL_KARSILIK" Type="decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="PARKURS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="DolarPrice" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="EuroPrice" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="PoundPrice" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="TurkishLiraPrice" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="RublePrice" Type="decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="PARKURS_USERS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="USER_ID" Type="int" />
+          <Property Name="USER_NAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="USER_SURNAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="PARKUR_ID" Type="int" />
+          <Property Name="KUR_ID" Type="int" />
+          <Property Name="KUR_CODE" Type="nvarchar" MaxLength="50" />
+          <Property Name="PRICE" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="UPDATE_DATE" Type="datetime" />
+        </EntityType>
+        <EntityType Name="USERS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="SURNAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="PHONE_NUMBER" Type="nvarchar" MaxLength="50" />
+          <Property Name="USER_CODE" Type="nvarchar" MaxLength="50" />
+          <Property Name="IS_SUPER_USER" Type="int" />
+          <Property Name="IS_DELETED" Type="bit" />
+          <Property Name="PASSWORD" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="ParkursAPIModelStoreContainer">
+          <EntitySet Name="FIRM" EntityType="Self.FIRM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KURS" EntityType="Self.KURS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PARKURS" EntityType="Self.PARKURS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PARKURS_USERS" EntityType="Self.PARKURS_USERS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="USERS" EntityType="Self.USERS" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ParkursAPIModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="FIRM">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FIRM_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ADRESS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IS_DELETED" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="KURS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KUR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IS_DELETED" Type="Boolean" />
+          <Property Name="TL_KARSILIK" Type="Decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="USERS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SURNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PHONE_NUMBER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="USER_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IS_SUPER_USER" Type="Int32" />
+          <Property Name="IS_DELETED" Type="Boolean" />
+          <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PARKURS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DolarPrice" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="EuroPrice" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PoundPrice" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="TurkishLiraPrice" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="RublePrice" Type="Decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="PARKURS_USERS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="USER_ID" Type="Int32" />
+          <Property Name="USER_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="USER_SURNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PARKUR_ID" Type="Int32" />
+          <Property Name="KUR_ID" Type="Int32" />
+          <Property Name="KUR_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PRICE" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="UPDATE_DATE" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="ParkursAPIEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="FIRM" EntityType="Self.FIRM" />
+          <EntitySet Name="KURS" EntityType="Self.KURS" />
+          <EntitySet Name="USERS" EntityType="Self.USERS" />
+          <EntitySet Name="PARKURS" EntityType="Self.PARKURS" />
+          <EntitySet Name="PARKURS_USERS" EntityType="Self.PARKURS_USERS" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ParkursAPIModelStoreContainer" CdmEntityContainer="ParkursAPIEntities">
+          <EntitySetMapping Name="FIRM">
+            <EntityTypeMapping TypeName="ParkursAPIModel.FIRM">
+              <MappingFragment StoreEntitySet="FIRM">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FIRM_NAME" ColumnName="FIRM_NAME" />
+                <ScalarProperty Name="ADRESS" ColumnName="ADRESS" />
+                <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KURS">
+            <EntityTypeMapping TypeName="ParkursAPIModel.KURS">
+              <MappingFragment StoreEntitySet="KURS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="KUR" ColumnName="KUR" />
+                <ScalarProperty Name="CODE" ColumnName="CODE" />
+                <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+                <ScalarProperty Name="TL_KARSILIK" ColumnName="TL_KARSILIK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USERS">
+            <EntityTypeMapping TypeName="ParkursAPIModel.USERS">
+              <MappingFragment StoreEntitySet="USERS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="SURNAME" ColumnName="SURNAME" />
+                <ScalarProperty Name="PHONE_NUMBER" ColumnName="PHONE_NUMBER" />
+                <ScalarProperty Name="USER_CODE" ColumnName="USER_CODE" />
+                <ScalarProperty Name="IS_SUPER_USER" ColumnName="IS_SUPER_USER" />
+                <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PARKURS">
+            <EntityTypeMapping TypeName="ParkursAPIModel.PARKURS">
+              <MappingFragment StoreEntitySet="PARKURS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="DolarPrice" ColumnName="DolarPrice" />
+                <ScalarProperty Name="EuroPrice" ColumnName="EuroPrice" />
+                <ScalarProperty Name="PoundPrice" ColumnName="PoundPrice" />
+                <ScalarProperty Name="TurkishLiraPrice" ColumnName="TurkishLiraPrice" />
+                <ScalarProperty Name="RublePrice" ColumnName="RublePrice" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PARKURS_USERS">
+            <EntityTypeMapping TypeName="ParkursAPIModel.PARKURS_USERS">
+              <MappingFragment StoreEntitySet="PARKURS_USERS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+                <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
+                <ScalarProperty Name="USER_SURNAME" ColumnName="USER_SURNAME" />
+                <ScalarProperty Name="PARKUR_ID" ColumnName="PARKUR_ID" />
+                <ScalarProperty Name="KUR_ID" ColumnName="KUR_ID" />
+                <ScalarProperty Name="KUR_CODE" ColumnName="KUR_CODE" />
+                <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+                <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

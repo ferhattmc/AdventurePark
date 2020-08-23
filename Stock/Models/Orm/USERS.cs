@@ -12,15 +12,15 @@ namespace Stock.Models.Orm
     using System;
     using System.Collections.Generic;
     
-    public partial class BarcodeDwh
+    public partial class USERS
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string BarcodeNumber { get; set; }
-        public Nullable<int> Amount { get; set; }
-        public string Date { get; set; }
-        public Nullable<int> ScannedBy { get; set; }
-        public Nullable<int> DepartmentId { get; set; }
-        public string Description { get; set; }
+        public int ID { get; set; }
+        public string NAME { get; set; }
+        public string SURNAME { get; set; }
+        public string PHONE_NUMBER { get; set; }
+        public string USER_CODE { get; set; }
+        public Nullable<int> IS_SUPER_USER { get; set; }
+        public Nullable<bool> IS_DELETED { get; set; }
+        public string PASSWORD { get; set; }
     }
 }

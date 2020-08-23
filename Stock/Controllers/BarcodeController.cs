@@ -11,7 +11,7 @@ using System.Web.Http.Cors;
 
 namespace Stock.Controllers
 {
-
+    /*
     [EnableCorsAttribute("*", "*", "*")]
     public class BarcodeController : ApiController
     {
@@ -31,11 +31,13 @@ namespace Stock.Controllers
                         var department = entities.Department.FirstOrDefault(d => d.DepartmentId == product.DepartmentId);
                         Log log1 = new Log()
                         {
+                            CustomerId = person.Id,
                             Name = person.Name,
-                            Surname = product.Name,
+                            Surname = person.Surname,
+                            ProductName = product.Name,
                             Department = department.DepartmentName,
                             Process = "İlk Kayıt",
-                            Date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
+                            Date = DateTime.Now.ToString("yyyy-MM-dd HH:mm"),
                             Amount = 0
                         };
                         entities.Log.Add(log1);
@@ -45,18 +47,20 @@ namespace Stock.Controllers
                             BarcodeNumber = product.BarcodeNumber,
                             Name = product.Name,
                             ScannedBy = product.ScannedBy,
-                            Date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
+                            Date = DateTime.Now.ToString("yyyy-MM-dd HH:mm"),
                             Amount = product.Amount,
                             DepartmentId = product.DepartmentId,
                             Description = product.Description
                         };
                         Log log2 = new Log()
                         {
+                            CustomerId = person.Id,
                             Name = person.Name,
-                            Surname = product.Name,
+                            Surname = person.Surname,
+                            ProductName = product.Name,
                             Department = department.DepartmentName,
                             Process ="Giriş",
-                            Date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
+                            Date = DateTime.Now.ToString("yyyy-MM-dd HH:mm"),
                             Amount = product.Amount
                         };
                         entities.Log.Add(log2);
@@ -104,11 +108,13 @@ namespace Stock.Controllers
                        
                         Log log1 = new Log()
                         {
+                            CustomerId = person.Id,
                             Name = person.Name,
-                            Surname = entityBarcode.Name,
+                            Surname = person.Surname,
+                            ProductName = entityBarcode.Name,
                             Department = department.DepartmentName,
                             Process = "Giriş",
-                            Date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
+                            Date = DateTime.Now.ToString("yyyy-MM-dd HH:mm"),
                             Amount = barcode.Amount
                         };
                         entities.Log.Add(log1);
@@ -150,11 +156,13 @@ namespace Stock.Controllers
 
                         Log log1 = new Log()
                         {
+                            CustomerId = person.Id,
                             Name = person.Name,
-                            Surname = entity.Name,
+                            Surname = person.Surname,
+                            ProductName = entity.Name,
                             Department = department.DepartmentName,
                             Process = "Çıkış",
-                            Date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
+                            Date = DateTime.Now.ToString("yyyy-MM-dd HH:mm"),
                             Amount = barcode.Amount
                         };
                         entities.Log.Add(log1);
@@ -203,11 +211,13 @@ namespace Stock.Controllers
                         var department = entities.Department.FirstOrDefault(d => d.DepartmentId == barcode.DepartmentId);
                         Log log1 = new Log()
                         {
+                            CustomerId = person.Id,
                             Name = person.Name,
-                            Surname = entity.Name,
+                            Surname = person.Surname,
+                            ProductName = entity.Name,
                             Department = department.DepartmentName,
                             Process = "Silme",
-                            Date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
+                            Date = DateTime.Now.ToString("yyyy-MM-dd HH:mm"),
                             Amount = 0
                         };
                         entities.Log.Add(log1);
@@ -302,5 +312,5 @@ namespace Stock.Controllers
                 throw;
             }
         }
-    }
+    }*/
 }

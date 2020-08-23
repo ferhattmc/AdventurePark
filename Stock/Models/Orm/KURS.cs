@@ -12,14 +12,12 @@ namespace Stock.Models.Orm
     using System;
     using System.Collections.Generic;
     
-    public partial class Log
+    public partial class KURS
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Surname { get; set; }
-        public string Department { get; set; }
-        public string Process { get; set; }
-        public string Date { get; set; }
-        public Nullable<int> Amount { get; set; }
+        public int ID { get; set; }
+        public string KUR { get; set; }
+        public string CODE { get; set; }
+        public Nullable<bool> IS_DELETED { get; set; }
+        public Nullable<decimal> TL_KARSILIK { get; set; }
     }
 }

@@ -24,6 +24,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -130,15 +131,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="Models\Orm\BarcodeDB.Context.tt">
+    <Content Include="Models\Orm\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>BarcodeDB.edmx</DependentUpon>
-      <LastGenOutput>BarcodeDB.Context.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\Orm\BarcodeDB.tt">
+    <Content Include="Models\Orm\Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>BarcodeDB.edmx</DependentUpon>
-      <LastGenOutput>BarcodeDB.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
@@ -147,46 +148,44 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\BarcodeController.cs" />
+    <Compile Include="Controllers\CompanyController.cs" />
+    <Compile Include="Controllers\CurrencyController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\LogController.cs" />
+    <Compile Include="Controllers\ParkurController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Orm\BarcodeDB.Context.cs">
+    <Compile Include="Models\Orm\FIRM.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Orm\KURS.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Orm\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BarcodeDB.Context.tt</DependentUpon>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Orm\BarcodeDB.cs">
+    <Compile Include="Models\Orm\Model1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BarcodeDB.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Orm\BarcodeDB.Designer.cs">
+    <Compile Include="Models\Orm\Model1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BarcodeDB.edmx</DependentUpon>
+      <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Orm\BarcodeDwh.cs">
-      <DependentUpon>BarcodeDB.tt</DependentUpon>
+    <Compile Include="Models\Orm\PARKURS.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Orm\Company.cs">
-      <DependentUpon>BarcodeDB.tt</DependentUpon>
+    <Compile Include="Models\Orm\PARKURS_USERS.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Orm\CompanyDepartment.cs">
-      <DependentUpon>BarcodeDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Orm\Customers.cs">
-      <DependentUpon>BarcodeDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Orm\Department.cs">
-      <DependentUpon>BarcodeDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Orm\Log.cs">
-      <DependentUpon>BarcodeDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Orm\Product.cs">
-      <DependentUpon>BarcodeDB.tt</DependentUpon>
+    <Compile Include="Models\Orm\USERS.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ResponseData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -196,14 +195,14 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <EntityDeploy Include="Models\Orm\BarcodeDB.edmx">
+    <EntityDeploy Include="Models\Orm\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>BarcodeDB.Designer.cs</LastGenOutput>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\Orm\BarcodeDB.edmx.diagram">
-      <DependentUpon>BarcodeDB.edmx</DependentUpon>
+    <Content Include="Models\Orm\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
-    <None Include="Properties\PublishProfiles\Barcode.pubxml" />
+    <None Include="Properties\PublishProfiles\Stock20200823044502 - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

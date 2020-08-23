@@ -12,10 +12,14 @@ namespace Stock.Models.Orm
     using System;
     using System.Collections.Generic;
     
-    public partial class CompanyDepartment
+    public partial class PARKURS
     {
-        public int Id { get; set; }
-        public int CompanyId { get; set; }
-        public int DepartmentId { get; set; }
+        public int ID { get; set; }
+        public string NAME { get; set; }
+        public Nullable<decimal> DolarPrice { get; set; }
+        public Nullable<decimal> EuroPrice { get; set; }
+        public Nullable<decimal> PoundPrice { get; set; }
+        public Nullable<decimal> TurkishLiraPrice { get; set; }
+        public Nullable<decimal> RublePrice { get; set; }
     }
 }

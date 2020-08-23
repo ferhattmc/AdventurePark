@@ -12,9 +12,11 @@ namespace Stock.Models.Orm
     using System;
     using System.Collections.Generic;
     
-    public partial class Department
+    public partial class FIRM
     {
-        public int DepartmentId { get; set; }
-        public string DepartmentName { get; set; }
+        public int ID { get; set; }
+        public string FIRM_NAME { get; set; }
+        public string ADRESS { get; set; }
+        public Nullable<bool> IS_DELETED { get; set; }
     }
 }

@@ -13,10 +13,10 @@ namespace Stock.Models.Orm
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class StockManagamentEntities : DbContext
+    public partial class ParkursAPIEntities : DbContext
     {
-        public StockManagamentEntities()
-            : base("name=StockManagamentEntities")
+        public ParkursAPIEntities()
+            : base("name=ParkursAPIEntities")
         {
         }
     
@@ -25,12 +25,10 @@ namespace Stock.Models.Orm
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<BarcodeDwh> BarcodeDwh { get; set; }
-        public virtual DbSet<Company> Company { get; set; }
-        public virtual DbSet<CompanyDepartment> CompanyDepartment { get; set; }
-        public virtual DbSet<Customers> Customers { get; set; }
-        public virtual DbSet<Department> Department { get; set; }
-        public virtual DbSet<Log> Log { get; set; }
-        public virtual DbSet<Product> Product { get; set; }
+        public virtual DbSet<FIRM> FIRM { get; set; }
+        public virtual DbSet<KURS> KURS { get; set; }
+        public virtual DbSet<USERS> USERS { get; set; }
+        public virtual DbSet<PARKURS> PARKURS { get; set; }
+        public virtual DbSet<PARKURS_USERS> PARKURS_USERS { get; set; }
     }
 }

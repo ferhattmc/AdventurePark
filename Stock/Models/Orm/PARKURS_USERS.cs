@@ -12,12 +12,16 @@ namespace Stock.Models.Orm
     using System;
     using System.Collections.Generic;
     
-    public partial class Company
+    public partial class PARKURS_USERS
     {
-        public int CompanyId { get; set; }
-        public string CompanyName { get; set; }
-        public string CompanyAddress { get; set; }
-        public string CompanyCity { get; set; }
-        public string CompanyTown { get; set; }
+        public int ID { get; set; }
+        public Nullable<int> USER_ID { get; set; }
+        public string USER_NAME { get; set; }
+        public string USER_SURNAME { get; set; }
+        public Nullable<int> PARKUR_ID { get; set; }
+        public Nullable<int> KUR_ID { get; set; }
+        public string KUR_CODE { get; set; }
+        public Nullable<decimal> PRICE { get; set; }
+        public Nullable<System.DateTime> UPDATE_DATE { get; set; }
     }
 }
